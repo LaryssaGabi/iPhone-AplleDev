@@ -36,47 +36,88 @@ export const MenuList = styled.ul`
   gap: 100px;
   list-style: none;
   margin-left: 100px;
-  cursor: pointer;
   transition: max-height 0.3s ease;
   overflow: hidden;
   
+  @media screen and (max-width: 770px) {
+    gap: 50px;
+    margin-top: 40px;
+    margin-left: 0; 
+    align-items: center; 
+  }
+
   @media screen and (max-width: 740px) {
     gap: 50px;
+    margin-top: 40px;
     margin-left: 0; 
+    align-items: center; 
   }
   
   @media screen and (max-width: 552px) {
     flex-direction: column;
-    margin: 0;
+    margin-top: 40px;
     align-items: center; 
   }
   `;
- export const MenuOverlay = styled.div`
- position: fixed;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- background-color: rgba(255, 255, 255, 0.95);
- display: ${({ isVisible }) => (isVisible ? 'flex' : 'none')}; 
- justify-content: center;
- align-items: center;
- z-index: 1000; 
- transition: opacity 0.3s ease, transform 0.3s ease;
- transform: ${({ isVisible }) => (isVisible ? 'translateY(0)' : 'translateY(-100%)')}; 
- opacity: ${({ isVisible }) => (isVisible ? '1' : '0')};
+
+export const MenuOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  color: #373737;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  z-index: 1000;
+  transform: ${({ isVisible }) => (isVisible ? 'translateX(0)' : 'translateX(-100%)')};
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
+  box-shadow: 0 4px 8px rgba(0, 0, 20, 0.5);
 `;
+
 
 
 export const MenuItem = styled.li`
-  font-size: 1.1rem;
+ font-size: 1.1rem;
   font-weight: 400;
-  color: #373737;
+  color: #373737; 
+  cursor: pointer;
+  position: relative; 
+  transition: color 0.3s ease-in-out; 
 
-  @media screen and (max-width: 552px) {
-    font-size: 0.9rem; 
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.9rem;
+    
+    &:hover {
+     color: #09ae9b; 
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: #09ae9b;
+      left: 0;
+      bottom: -5px;
+      transition: width 0.3s ease-in-out;
+    }
+
+    &:hover:after {
+      width: 100%; 
+    }
+
+    &:active {
+      color: #09ae9b; 
+      background-color: rgba(9, 174, 155, 0.2); 
+    }
   }
 `;
+
 
 export const Logo = styled.img`
   height: 1.5rem;
@@ -217,4 +258,12 @@ export const IphoneImagem = styled.img`
     width: 300px;
     margin-top: 50px; 
   }
+`;
+
+export const CloseButton = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  z-index: 10; 
 `;

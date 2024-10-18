@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { AlignJustify } from 'lucide-react';
+import { AlignJustify, X } from 'lucide-react';
 import {
   CaixaRoxa,
   Logo,
@@ -18,6 +18,7 @@ import {
   Main,
   MenuOverlay,
   Header,
+  CloseButton, 
 } from './styles';
 import Azul from '../assets/iphone-azul.png';
 import Amarelo from '../assets/iphone-amarelo.png';
@@ -80,19 +81,22 @@ function Screen() {
             )}
           </Header>
 
-          {isMenuVisible && isMobile && (
-            <MenuOverlay onClick={toggleMenu}>
-              <MenuList>
-                <MenuItem onClick={toggleMenu}>Mac</MenuItem>
-                <MenuItem onClick={toggleMenu}>iPhone</MenuItem>
-                <MenuItem onClick={toggleMenu}>iPad</MenuItem>
-                <MenuItem onClick={toggleMenu}>Watch</MenuItem>
-                <MenuItem onClick={toggleMenu}>AirPods</MenuItem>
-                <MenuItem onClick={toggleMenu}>Acessórios</MenuItem>
-                <MenuItem onClick={toggleMenu}>Suporte</MenuItem>
-              </MenuList>
-            </MenuOverlay>
-          )}
+
+          <MenuOverlay isVisible={isMenuVisible}>
+            <CloseButton onClick={toggleMenu}>
+              <X style={{ cursor: 'pointer', color: '#A9A9A9' }} />
+            </CloseButton>
+            <MenuList style={{ flexDirection: 'column' }}>
+              <MenuItem onClick={toggleMenu}>Mac</MenuItem>
+              <MenuItem onClick={toggleMenu}>iPhone</MenuItem>
+              <MenuItem onClick={toggleMenu}>iPad</MenuItem>
+              <MenuItem onClick={toggleMenu}>Watch</MenuItem>
+              <MenuItem onClick={toggleMenu}>AirPods</MenuItem>
+              <MenuItem onClick={toggleMenu}>Acessórios</MenuItem>
+              <MenuItem onClick={toggleMenu}>Suporte</MenuItem>
+
+            </MenuList>
+          </MenuOverlay>
         </CaixaRoxa>
 
         <CaixaAzul>
