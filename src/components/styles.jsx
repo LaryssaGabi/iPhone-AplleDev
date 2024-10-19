@@ -39,7 +39,27 @@ export const MenuList = styled.ul`
   transition: max-height 0.3s ease;
   overflow: hidden;
   
-  @media screen and (max-width: 770px) {
+  @media screen and (max-width: 1200px) {
+    gap: 80px;
+  }
+
+  @media screen and (max-width: 1100px) {
+    gap: 70px;
+  }
+
+  @media screen and (max-width: 1030px) {
+    gap: 50px;
+  }
+
+  @media screen and (max-width: 905px) {
+    gap: 35px;
+  }
+  
+  @media screen and (max-width: 905px) {
+    gap: 25px;
+  }
+
+  @media screen and (max-width: 769px) {
     gap: 50px;
     margin-top: 40px;
     margin-left: 0; 
@@ -81,7 +101,7 @@ export const MenuOverlay = styled.div`
 
 
 export const MenuItem = styled.li`
- font-size: 1.1rem;
+  font-size: 1.1rem;
   font-weight: 400;
   color: #373737; 
   cursor: pointer;
@@ -232,15 +252,7 @@ export const CorButton = styled.button`
   }
 `;
 
-export const Circulo = styled.div`
-  width: 100%;
-  height: 100%;
-  background: #81A5C4;
-  position: absolute;
-  top: 0;
-  left: 0;
-  clip-path: circle(600px at right 1000px);
-`;
+
 
 export const IphoneImagem = styled.img`
   width: 450px;
@@ -255,9 +267,27 @@ export const IphoneImagem = styled.img`
   }
 
   @media screen and (max-width: 740px) {
-    width: 300px;
+    width: 290px;
     margin-top: 50px; 
   }
+
+`;
+
+export const Circulo = styled.div`
+  width: 100%;
+  height: 100%;
+  background: #81A5C4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  clip-path: circle(600px at right 1000px);
+
+  @media screen and (max-width: 740px) {
+    margin-top: 20px;
+    height: 108%;
+  }
+
+
 `;
 
 export const CloseButton = styled.div`

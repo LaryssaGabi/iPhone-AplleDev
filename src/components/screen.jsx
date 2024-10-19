@@ -94,7 +94,6 @@ function Screen() {
               <MenuItem onClick={toggleMenu}>AirPods</MenuItem>
               <MenuItem onClick={toggleMenu}>Acessórios</MenuItem>
               <MenuItem onClick={toggleMenu}>Suporte</MenuItem>
-
             </MenuList>
           </MenuOverlay>
         </CaixaRoxa>
